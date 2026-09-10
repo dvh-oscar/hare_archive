@@ -4,10 +4,10 @@ init offset = -1
 ## 캐릭터 스탠딩/스프라이트 Transform 정의
 ################################################################################
 
-define POS_LEFT = 0.15
-define POS_CENTER = 0.325
-define POS_RIGHT = 0.68
-define DEFAULT_ZOOM = 0.66
+define POS_LEFT = 0.25
+define POS_CENTER = 0.50
+define POS_RIGHT = 0.75
+define DEFAULT_ZOOM = 0.675
 
 
 transform active_say:
@@ -21,19 +21,19 @@ transform inactive_say:
     linear 0.2 matrixcolor TintMatrix("#888888")
 
 transform sprite_center:
-    # zoom DEFAULT_ZOOM
-    xpos POS_CENTER
-    ypos 0.1
+    zoom DEFAULT_ZOOM
+    anchor (0.5, 0.5)
+    pos (POS_CENTER, 0.425)
 
 transform sprite_right:
-    # zoom DEFAULT_ZOOM
-    xpos POS_RIGHT
-    ypos 0.1
+    zoom DEFAULT_ZOOM
+    anchor (0.5, 0.5)
+    pos (POS_RIGHT, 0.425)
 
 transform sprite_left:
-    # zoom DEFAULT_ZOOM
-    xpos POS_LEFT
-    ypos 0.1
+    zoom DEFAULT_ZOOM
+    anchor (0.5, 0.5)
+    pos (POS_LEFT, 0.425)
 
 transform sprite_jump:
     yoffset 0
