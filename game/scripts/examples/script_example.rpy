@@ -1,5 +1,5 @@
 # 여기에서부터 게임이 시작합니다.
-label start:
+label start_test:
 
     ## miyo 캐릭터 스프라이트와 circle 기능 테스트
     show miyo at sprite_center
