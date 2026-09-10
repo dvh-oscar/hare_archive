@@ -1,0 +1,2 @@
+# Ren'Py 외부 유틸리티용 Python 의존성 목록
+Pillow>=10.0.0
