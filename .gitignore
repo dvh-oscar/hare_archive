@@ -118,3 +118,10 @@ Blue Archive Collections/
 __pycache__
 tools/workdir
 game/images/characters
+
+game/scripts/contents
+
+*.rpyc*
+
+game/audio/bgm
+game/images/backgrounds

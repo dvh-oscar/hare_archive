@@ -1,0 +1,1 @@
+[캐릭터 코드](BaSpines/### Character Code Map ###/CharacterCodeMap.json)
