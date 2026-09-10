@@ -11,7 +11,7 @@ transform _fx_ice1_atl:
     block:
         linear 0.08 xoffset 3 yoffset -2
         linear 0.08 xoffset -3 yoffset 2
-        repeat
+        linear 0.08 xoffset 0 yoffset 0
 
 transform _fx_ice2_atl:
     pos (30, 20)
@@ -20,7 +20,7 @@ transform _fx_ice2_atl:
     block:
         linear 0.09 xoffset -2 yoffset 3
         linear 0.09 xoffset 2 yoffset -3
-        repeat
+        linear 0.09 xoffset 0 yoffset 0
 
 transform _fx_ice3_atl:
     pos (10, -20)
@@ -29,7 +29,7 @@ transform _fx_ice3_atl:
     block:
         linear 0.07 xoffset 2 yoffset 2
         linear 0.07 xoffset -2 yoffset -2
-        repeat
+        linear 0.07 xoffset 0 yoffset 0
 
 image _fx_ice_base = Fixed(
     At("images/emoticons/Emoticon_Ice_V.png", _fx_ice1_atl),

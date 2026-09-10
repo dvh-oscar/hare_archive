@@ -11,7 +11,7 @@ transform _fx_shy_icon_motion:
     block:
         easein 0.22 rotate 7 zoom 0.73
         easeout 0.22 rotate -7 zoom 0.68
-        repeat
+        easein 0.18 rotate 0 zoom 0.70
 
 image _fx_shy_base = Fixed(
     Transform("images/emoticons/Emoticon_Balloon_N.png", zoom=0.7, pos=(0, 0)),

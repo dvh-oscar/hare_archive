@@ -21,17 +21,17 @@ transform inactive_say:
     linear 0.2 matrixcolor TintMatrix("#888888")
 
 transform sprite_center:
-    zoom DEFAULT_ZOOM
+    # zoom DEFAULT_ZOOM
     anchor (0.5, 0.5)
     pos (POS_CENTER, 0.425)
 
 transform sprite_right:
-    zoom DEFAULT_ZOOM
+    # zoom DEFAULT_ZOOM
     anchor (0.5, 0.5)
     pos (POS_RIGHT, 0.425)
 
 transform sprite_left:
-    zoom DEFAULT_ZOOM
+    # zoom DEFAULT_ZOOM
     anchor (0.5, 0.5)
     pos (POS_LEFT, 0.425)
 

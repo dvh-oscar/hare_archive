@@ -13,12 +13,9 @@ transform _fx_surprised_root(duration=1.5, sfx="sfx_emoticon_surprise"):
     easein 0.08 zoom 1.0 yoffset 0
     parallel:
         block:
-            linear 0.04 xoffset 4
-            linear 0.04 xoffset -4
-            repeat 4
-            xoffset 0
-            pause 0.5
-            repeat
+            linear 0.05 xoffset 4
+            linear 0.05 xoffset -4
+            linear 0.05 xoffset 0
     parallel:
         pause duration
         linear 0.6 alpha 0.0

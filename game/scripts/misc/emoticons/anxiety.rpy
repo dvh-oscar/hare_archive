@@ -11,7 +11,7 @@ transform _fx_anxiety_pulse:
     block:
         ease 0.18 xzoom 0.95 yzoom 0.62
         ease 0.18 xzoom 0.62 yzoom 0.95
-        repeat
+        ease 0.18 xzoom 1.00 yzoom 1.00
 
 transform _fx_anxiety_shake:
     block:

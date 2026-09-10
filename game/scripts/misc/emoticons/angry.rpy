@@ -6,12 +6,8 @@ init offset = -1
 
 transform _fx_angry_twitch:
     block:
-        easein 0.12 zoom 1.15
-        easeout 0.10 zoom 0.95
-        easein 0.10 zoom 1.10
-        easeout 0.10 zoom 1.00
-        pause 0.35
-        repeat
+        easein 0.14 zoom 1.15
+        easeout 0.12 zoom 1.00
 
 transform _fx_angry_root(duration=1.5, sfx="sfx_emoticon_angry"):
     anchor (0.5, 0.5)
