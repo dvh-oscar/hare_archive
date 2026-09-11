@@ -78,7 +78,10 @@ label example:
     show highlander at sprite_jump, active_say # active_say, inactive_say, comm_blue, comm_blue_inactive 는 마지막에 사용해야 잘 작동하는 경향이 있음
     pause 1.0
     show highlander at inactive_say
+    show fx question:
+        pos (0.24, 0.67)
     show millemob at sprite_pickup, active_say
+    pause 1.0
     millemob "뭘 그리 방방 뛰고 그럽니까?"
     
 
