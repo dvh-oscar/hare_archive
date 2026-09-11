@@ -15,9 +15,11 @@ transform _fx_respond_root(duration=1.5, sfx="sfx_emoticon_respond"):
     linear 0.5 alpha 0.0
 
 image _fx_respond_base = Fixed(
-    Transform("images/emoticons/Emoticon_Action.png", zoom=0.7, pos=(0, -50), rotate=-20),
-    Transform("images/emoticons/Emoticon_Action.png", zoom=0.7, pos=(20, 36)),
-    Transform("images/emoticons/Emoticon_Action.png", zoom=0.7, pos=(0, 72), rotate=20),
+    Transform("images/emoticons/Emoticon_Action.png", zoom=0.60, pos=(0, -50), rotate=35),
+    Transform("images/emoticons/Emoticon_Action.png", zoom=0.75, pos=(-37, -25), rotate=10),
+    Transform("images/emoticons/Emoticon_Action.png", zoom=0.67, pos=(-30, 25), rotate=-7),
+    # Transform("images/emoticons/Emoticon_Action.png", zoom=0.7, pos=(20, 36)),
+    # Transform("images/emoticons/Emoticon_Action.png", zoom=0.7, pos=(0, 72), rotate=20),
     xsize=95,
     ysize=115,
     fit_first=False

@@ -15,21 +15,22 @@ output_folder = Path("./game/images/characters").resolve()
 
 
 def process_image(image_file, config, facial):
-    TARGET_WIDTH = 4096
+    TARGET_WIDTH = 3000
     TARGET_HEIGHT = 4096
+    HEIGHT_RATIO = 0.25
     origin_image = Image.open(image_file)
     grid_image = Image.new("RGB", (TARGET_WIDTH, TARGET_HEIGHT), (50, 50, 50))
     output_image = Image.new("RGBA", (TARGET_WIDTH, TARGET_HEIGHT), (0, 0, 0, 0))
 
     paste_x = (TARGET_WIDTH - origin_image.width) // 2 + config["dx"]
-    paste_y = (TARGET_HEIGHT - origin_image.height) // 2 + config["dy"]
+    paste_y = int(HEIGHT_RATIO * TARGET_HEIGHT - 0.5 * origin_image.height) + config["dy"]
 
     output_image.paste(origin_image, (paste_x, paste_y))
 
     grid_image.paste(origin_image, (paste_x, paste_y))
     draw = ImageDraw.Draw(grid_image)
     draw.line(
-        [(0, TARGET_HEIGHT // 2), (TARGET_WIDTH, TARGET_HEIGHT // 2)], (255, 0, 0), 10
+        [(0, int(TARGET_HEIGHT * HEIGHT_RATIO)), (TARGET_WIDTH, int(TARGET_HEIGHT * HEIGHT_RATIO))], (255, 0, 0), 10
     )
 
     draw.line(

@@ -7,5 +7,9 @@ image bg upper_office = Transform("images/backgrounds/BG_UpperOffice.jpg", xalig
 
 # 밀레니엄
 image bg millenium_center = Transform("images/backgrounds/BG_MilleniumCenter.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+image bg millenium_center_night = Transform("images/backgrounds/BG_MilleniumCenter_Night.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+image bg millenium_center_night_2 = Transform("images/backgrounds/BG_MilleniumCenter_Night2.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
 image bg millenium_coriidor = Transform("images/backgrounds/BG_MilleniumCorridor.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+image bg millenium_corridor_night = Transform("images/backgrounds/BG_MilleniumCorridor_Night.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
 image bg millenium_club = Transform("images/backgrounds/BG_Milleniumclub.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+image bg millenium_club_night = Transform("images/backgrounds/BG_Milleniumclub_Night.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
