@@ -11,6 +11,15 @@ RenPy를 사용합니다.
 이 프로젝트는 개발자의 흥미에 의해 유지보수합니다.
 개발자가 원하는 바에 따라 기능을 추가합니다.
 
+## 기타 리소스
+gitignore 처리한 사항은 사용자가 직접 리소스를 확보애햐 합니다.
+### 이미지
+- `game/images/backgrounds` : 배경 일러스트
+- `game/images/cg` : CG 일러스트
+- `game/images/characters` : 스탠딩 일러스트
+### 음향
+- `game/audio/bgm` : 배경음악. `game/scripts/misc/bgm.rpy`에 배경음악의 목록이 정의되어 있습니다.
+
 # 기능
 ## 스탠딩 일러스트 전처리
 > 이 기능을 사용하려면 Python이 설치되어 있어야 합니다.
@@ -32,7 +41,7 @@ RenPy를 사용합니다.
 
 # 스크립트
 > 사용자는 `game/` 내의 적당히 rpy 파일을 작성하 `start` 라벨을 작성하여야 합니다.
-## Transform
+## 예제
 `sprite_left`, `sprite_center`, `sprite_right`과 `DEFAULT_ZOOM` 을 이용하면 화면에 최대 3인의 캐릭터를 자연스럽게 배치할 수 있습니다.
 해당 Transform은 스탠딩 일러스트의 가로축상 중앙, 세로축상 위와 아래를 1:3 으로 내분하는 지점을 anchor로 하고 있습니다. (위에 서술한 스탠딩 일러스트 전처리 내용을 확인하십시오)
 
