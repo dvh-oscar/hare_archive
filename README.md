@@ -12,7 +12,7 @@ RenPy를 사용합니다.
 개발자가 원하는 바에 따라 기능을 추가합니다.
 
 ## 기타 리소스
-gitignore 처리한 사항은 사용자가 직접 리소스를 확보애햐 합니다.
+gitignore 처리한 사항은 사용자가 직접 리소스를 확보해야 합니다.
 ### 이미지
 - `game/images/backgrounds` : 배경 일러스트
 - `game/images/cg` : CG 일러스트
