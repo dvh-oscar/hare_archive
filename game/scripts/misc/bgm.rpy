@@ -1,7 +1,7 @@
 init offset = -1
 
 # 아루가 멘붕왔을 때
-define audio.bgm_007_unwelcome_school = "audio/bgm/BGM_007_unwelcom_school.mp3"
+define audio.bgm_007_unwelcome_school = "audio/bgm/BGM_007_unwelcome_school.mp3"
 
 # 게한나 학생들이 잔잔하고 소소하게 사고치고 다니는 브금
 define audio.bgm_008_shady_girls = "audio/bgm/BGM_008._Shady_Girls.mp3"
