@@ -39,6 +39,8 @@ define audio.sound_door_open = "audio/sound/sound_door_open.mp3"
 define audio.sound_call_beep = "audio/sound/call_beep.mp3"
 define audio.sound_call_beep_connected = "audio/sound/call_beep_connected.mp3"
 define audio.sound_hammer = "audio/sound/hammer.mp3"
+define audio.sound_boom = "audio/sound/boom.mp3"
+define audio.sound_cloth = "audio/sound/cloth.mp3"
 
 ## 4. UI 효과음
 define audio.click_sound = "audio/sfx/click_sound.mp3"

@@ -10,6 +10,8 @@
 
 - `hammer.mp3` : "망치_철_때리기_세게_3", 한국저각권위원회, 공유마당(한국저작권위원회), CC BY, https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13264023&menuNo=200020
 
+- `boom.mp3` : "MFXweaponscannonhowitzer02", 김용배, 공유마당, CC BY, https://gongu.copyright.or.kr/gongu/wrt/wrt/view.do?wrtSn=13252443&menuNo=200020
+
 
 ---
 # 글꼴
