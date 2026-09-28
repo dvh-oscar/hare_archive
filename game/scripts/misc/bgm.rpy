@@ -21,5 +21,8 @@ define audio.bgm_241_dandan_invader = "audio/bgm/BGM_241_Dan_Dan_Invader.mp3"
 # 밀레니엄 코드박스 이벤트에서 리오의 은신처 테마
 define aduio.bgm_242 = "audio/bgm/BGM_242.mp3"
 
+# 밀레니엄 코드박스 이벤트 필드 탐색 진입전 화면 테마, 혹은 카노에가 생각나는 브금
+define audio.bgm_252_playful_maniac = "audio/bgm/BGM_252_Playful_Maniac.mp3"
+
 # 칼학생회장 등장 브금
 define audio.bgm_324_replica = "audio/bgm/BGM_324_Replica.mp3"
