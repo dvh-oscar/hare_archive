@@ -1,13 +1,24 @@
 init offset = -1
 
+# 임무 진행시 브금
+define audio.bgm_003_mischievous_step = "audio/bgm/BGM_003_mischievous_step.mp3"
+
 # 아루가 멘붕왔을 때
 define audio.bgm_007_unwelcome_school = "audio/bgm/BGM_007_unwelcome_school.mp3"
 
 # 게한나 학생들이 잔잔하고 소소하게 사고치고 다니는 브금
-define audio.bgm_008_shady_girls = "audio/bgm/BGM_008._Shady_Girls.mp3"
+define audio.bgm_008_shady_girls = "audio/bgm/BGM_008_Shady_Girls.mp3"
 
 # 평화롭고 잘 마무리된 듯한 어느날 밤
-define audio.bgm_015_honey_jamp = "audio/bgm/BGM_015_Honey_Jam.mp3"
+define audio.bgm_015_honey_jam = "audio/bgm/BGM_015_Honey_Jam.mp3"
+
+# 검은양복 메모리얼 로비
+define audio.bgm_092_crucial_issue = "audio/bgm/BGM_092_Crucial_Issue.mp3"
+
+# 사오리의 어두운 면이 부각되는 브금
+define audio.bgm_093_formless_dream = "audio/bgm/BGM_093_Formless_Dream.mp3"
+
+define audio.bgm_113_usagi_flap = "audio/bgm/BGM_113_Usagi_Flap.mp3"
 
 # 백귀야행 피폐 키쿄가 어울리는 브금
 define audio.bgm_196_getsurin = "audio/bgm/BGM_196_Getsurin.mp3"

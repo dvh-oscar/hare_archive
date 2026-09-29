@@ -9,6 +9,7 @@ define POS_CENTER = 0.50
 define POS_RIGHT = 0.75
 define DEFAULT_ZOOM = 0.675
 
+define DEFAULT_ANCHOR = (0.5, 0.25)
 
 transform active_say:
     # xoffset 0
@@ -22,17 +23,17 @@ transform inactive_say:
 
 transform sprite_center:
     # zoom DEFAULT_ZOOM
-    anchor (0.5, 0.25)
+    anchor DEFAULT_ANCHOR
     pos (POS_CENTER, 0.425)
 
 transform sprite_right:
     # zoom DEFAULT_ZOOM
-    anchor (0.5, 0.25)
+    anchor DEFAULT_ANCHOR
     pos (POS_RIGHT, 0.425)
 
 transform sprite_left:
     # zoom DEFAULT_ZOOM
-    anchor (0.5, 0.25)
+    anchor DEFAULT_ANCHOR
     pos (POS_LEFT, 0.425)
 
 transform sprite_jump:

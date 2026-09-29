@@ -3,7 +3,8 @@ import shutil
 
 from pathlib import Path
 from PIL import Image, ImageDraw
-from multiprocessing import Process
+from multiprocessing import Pool, cpu_count
+import traceback
 import json
 
 
@@ -15,40 +16,44 @@ output_folder = Path("./game/images/characters").resolve()
 
 
 def process_image(image_file, config, facial):
-    TARGET_WIDTH = 3000
-    TARGET_HEIGHT = 4096
-    HEIGHT_RATIO = 0.25
-    origin_image = Image.open(image_file)
-    grid_image = Image.new("RGB", (TARGET_WIDTH, TARGET_HEIGHT), (50, 50, 50))
-    output_image = Image.new("RGBA", (TARGET_WIDTH, TARGET_HEIGHT), (0, 0, 0, 0))
+    try:
+        TARGET_WIDTH = 3000
+        TARGET_HEIGHT = 4096
+        HEIGHT_RATIO = 0.25
+        origin_image = Image.open(image_file)
+        grid_image = Image.new("RGB", (TARGET_WIDTH, TARGET_HEIGHT), (50, 50, 50))
+        output_image = Image.new("RGBA", (TARGET_WIDTH, TARGET_HEIGHT), (0, 0, 0, 0))
 
-    paste_x = (TARGET_WIDTH - origin_image.width) // 2 + config["dx"]
-    paste_y = int(HEIGHT_RATIO * TARGET_HEIGHT - 0.5 * origin_image.height) + config["dy"]
+        paste_x = (TARGET_WIDTH - origin_image.width) // 2 + config["dx"]
+        paste_y = int(HEIGHT_RATIO * TARGET_HEIGHT - 0.5 * origin_image.height) + config["dy"]
 
-    output_image.paste(origin_image, (paste_x, paste_y))
+        output_image.paste(origin_image, (paste_x, paste_y))
 
-    grid_image.paste(origin_image, (paste_x, paste_y))
-    draw = ImageDraw.Draw(grid_image)
-    draw.line(
-        [(0, int(TARGET_HEIGHT * HEIGHT_RATIO)), (TARGET_WIDTH, int(TARGET_HEIGHT * HEIGHT_RATIO))], (255, 0, 0), 10
-    )
+        grid_image.paste(origin_image, (paste_x, paste_y))
+        draw = ImageDraw.Draw(grid_image)
+        draw.line(
+            [(0, int(TARGET_HEIGHT * HEIGHT_RATIO)), (TARGET_WIDTH, int(TARGET_HEIGHT * HEIGHT_RATIO))], (255, 0, 0), 10
+        )
 
-    draw.line(
-        [(TARGET_WIDTH // 2, 0), (TARGET_WIDTH // 2, TARGET_HEIGHT)], (255, 0, 0), 10
-    )
+        draw.line(
+            [(TARGET_WIDTH // 2, 0), (TARGET_WIDTH // 2, TARGET_HEIGHT)], (255, 0, 0), 10
+        )
 
-    facial_code = image_file.name.split("_default_")[-1].split(".png")[0]
+        facial_code = image_file.name.split("_default_")[-1].split(".png")[0]
 
-    facial_name = "faicial_" + facial_code
+        facial_name = "facial_" + facial_code
 
-    if facial_code in facial.keys():
-        facial_name = facial[facial_code]
+        if facial_code in facial.keys():
+            facial_name = facial[facial_code]
 
 
 
-    filename = (config["id"] + " " + facial_name).strip() + ".png"
-    output_image.save(output_folder / config["id"] / filename, "PNG")
-    grid_image.save(grid_folder / config["id"] / filename, "PNG")
+        filename = (config["id"] + " " + facial_name).strip() + ".png"
+        output_image.save(output_folder / config["id"] / filename, "PNG")
+        grid_image.save(grid_folder / config["id"] / filename, "PNG")
+    except Exception as e:
+        print(f"[ERROR] {image_file}: {e}")
+        traceback.print_exc()
 
 
 if "__main__" == __name__:
@@ -75,7 +80,7 @@ if "__main__" == __name__:
     print("delete previous data")
     
 
-    thread_list = []
+    tasks = []
 
     # common_facial_data = json.loads(Path("./tools/facial_maps/000_common.json").resolve().read_text())
     config_data = json.loads(Path("./tools/workdir/config.json").resolve().read_text())
@@ -103,15 +108,12 @@ if "__main__" == __name__:
 
 
         for image_file in input_folder.iterdir():
-            thread = Process(target = process_image, args=(image_file, config_data[character], facial_data))
-            thread.start()
-            thread_list.append(thread)
+            tasks.append((image_file, config_data[character], facial_data))
             # break
             
 
-    print("병렬 처리 중...")
+    print(f"병렬 처리 중... (workers: {cpu_count()}, tasks: {len(tasks)})")
 
-    for thread in thread_list:
-        thread.join()
-
+    with Pool(processes=cpu_count()) as pool:
+        pool.starmap(process_image, tasks)
 

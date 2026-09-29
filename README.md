@@ -42,6 +42,7 @@ gitignore 처리한 사항은 사용자가 직접 리소스를 확보해야 합�
 # 스크립트
 > 사용자는 `game/` 내의 적당히 rpy 파일을 작성하 `start` 라벨을 작성하여야 합니다.
 ## 예제
+### 일반적인 예시
 `sprite_left`, `sprite_center`, `sprite_right`과 `DEFAULT_ZOOM` 을 이용하면 화면에 최대 3인의 캐릭터를 자연스럽게 배치할 수 있습니다.
 해당 Transform은 스탠딩 일러스트의 가로축상 중앙, 세로축상 위와 아래를 1:3 으로 내분하는 지점을 anchor로 하고 있습니다. (위에 서술한 스탠딩 일러스트 전처리 내용을 확인하십시오)
 
@@ -83,10 +84,41 @@ label example:
     show millemob at sprite_pickup, active_say
     pause 1.0
     millemob "뭘 그리 방방 뛰고 그럽니까?"
-    
 
-    
-    
+```
 
+### 모브 취급 요령
+```renpy
+define mob1 = Character("모브 양", image = "mob", circle = "1번 모브")
+define mob2 = Character("모브 쨩", image = "mob", circle = "2번 모브")
+define mob3 = Character("모브 씨", image = "mob", circle = "3번 모브")
 
+label mobs:
+    show mob smile as mob1 at sprite_left:
+        zoom DEFAULT_ZOOM
+        matrixcolor TintMatrix("#888888")
+    show mob smile as mob2 at sprite_center:
+        zoom DEFAULT_ZOOM
+        matrixcolor TintMatrix("#888888")
+    show mob smile as mob3 at sprite_right:
+        zoom DEFAULT_ZOOM
+        matrixcolor TintMatrix("#888888")
+    with dissolve
+
+    show mob smile as mob1 at active_say
+
+    mob1 "안녕?"
+    show mob smile as mob1 at inactive_say
+    show mob awkward as mob2 at active_say
+
+    mob2 "그래..."
+
+    show mob awkard as mob2 at inactive_say
+    show mob smile as mob3 at active_say
+
+    mob3 "?"
+
+    hide mob as mob1 with dissolve
+
+    mob2 "..."
 ```
