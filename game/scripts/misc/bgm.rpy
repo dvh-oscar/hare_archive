@@ -12,13 +12,20 @@ define audio.bgm_008_shady_girls = "audio/bgm/BGM_008_Shady_Girls.mp3"
 # 평화롭고 잘 마무리된 듯한 어느날 밤
 define audio.bgm_015_honey_jam = "audio/bgm/BGM_015_Honey_Jam.mp3"
 
+# 승리 브금
+define audio.bgm_023_party_time = "audio/bgm/BGM_023_Party_Time.mp3"
+
 # 검은양복 메모리얼 로비
 define audio.bgm_092_crucial_issue = "audio/bgm/BGM_092_Crucial_Issue.mp3"
 
 # 사오리의 어두운 면이 부각되는 브금
 define audio.bgm_093_formless_dream = "audio/bgm/BGM_093_Formless_Dream.mp3"
 
+# 토끼탕
 define audio.bgm_113_usagi_flap = "audio/bgm/BGM_113_Usagi_Flap.mp3"
+
+# 쿠코카케 전투
+define audio.bgm_181_dark_shadows = "audio/bgm/BGM_181_Dark_Shadows.mp3"
 
 # 백귀야행 피폐 키쿄가 어울리는 브금
 define audio.bgm_196_getsurin = "audio/bgm/BGM_196_Getsurin.mp3"

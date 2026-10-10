@@ -23,20 +23,63 @@ gitignore 처리한 사항은 사용자가 직접 리소스를 확보해야 합�
 # 기능
 ## 스탠딩 일러스트 전처리
 > 이 기능을 사용하려면 Python이 설치되어 있어야 합니다.
-1. 전처리가 필요한 스탠딩 일러스트를 `BaSpines/{id}/{id}_default_{number}.png` 에 준비하십시오
-2. `tools/workdir/config.json` 속성을 추가하십시오.
+1. 전처리가 필요한 스탠딩 일러스트를 `BaSpines/{id}/{id}_default_{number}.png` 에 준비하십시오.
+2. `tools/workdir/config.json`에 캐릭터 속성을 추가하십시오.
     ```json
     {
-        // 속성명은 {id} 롸 동일해야 함
+        // 속성명은 {id} 와 동일해야 함
         "NP0036": {
             "id": "millemob", // 이 명칭은 캐릭터 일러스트 접두사로 사용됨
             "dx": 50,
-            "dy": 800
+            "dy": 800,
+            "facials": {
+                // 표정별 추가 오프셋 및 표정명 정의 가능
+                "09": {
+                    "name": "shout",
+                    "offset": {
+                        "dx": 0,
+                        "dy": -10
+                    }
+                },
+                "10": {
+                    "name": "sad"
+                }
+            }
         }
     }
     ```
+
+### 표정 정의 및 오프셋(offset) 설정
+표정 매핑 및 표정별 추가 위치 오프셋(`offset`)은 다음 세 단계의 우선순위로 적용됩니다:
+1. **`tools/workdir/config.json`** 의 캐릭터별 `facials` 속성
+2. **`tools/facial_maps/{character}.json`** (캐릭터별 별도 JSON 파일)
+3. **`tools/facial_maps/000_common.json`** (공통 기본 표정 정의)
+
+#### 표정 정의 문법 예시
+표정 정의는 단순 문자열 또는 객체(`name`, `offset`) 형태로 작성할 수 있으며, `config.json`과 별도 JSON 파일 모두 동일한 문법을 지원합니다.
+
+- **별도 JSON 파일 예시 (`tools/facial_maps/NP0036.json`)**:
+  ```json
+  {
+      "01": "",
+      "02": "talk",
+      "09": {
+          "name": "shout",
+          "offset": {
+              "dx": 10,
+              "dy": -20
+          }
+      },
+      "10": {
+          "name": "sad"
+      },
+      "99": "closed"
+  }
+  ```
+- **`offset` 설정**: 특정 표정에서 스프라이트의 위치 보정이 필요한 경우 `offset: { "dx": ..., "dy": ... }`를 지정하면 캐릭터 기본 `dx`, `dy`에 해당 값이 추가로 더해져 적용됩니다.
+
 3. `run_tool.bat` 혹은 `run_tool.sh` 를 실행하십시오.
-4. `tools/grid/{id}`에 생성된 일러스트를 확인하십시오. 적색 가로선과 세로선의 교점이 의도한 위치에 있는지 확인하십시오. 이 프로젝트에 정의한 각종 Transform 이 해당 위치를 중심으로 확대 혹은 축소를 수행합니다. 필요에 따라 `dx` 혹은 `dy` 의 값을 조정하십시오.
+4. `tools/workdir/grid/{id}`에 생성된 일러스트를 확인하십시오. 적색 가로선과 세로선의 교점이 의도한 위치에 있는지 확인하십시오. 이 프로젝트에 정의한 각종 Transform 이 해당 위치를 중심으로 확대 혹은 축소를 수행합니다. 필요에 따라 `dx` 혹은 `dy` 및 표정별 `offset` 값을 조정하십시오.
 5. `game/images/characters/{id}`에 생성된 파일을 확인하십시오.
 
 # 스크립트

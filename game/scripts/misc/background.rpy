@@ -41,4 +41,19 @@ image bg subway_night = Transform("images/backgrounds/BG_Subway_Night.jpg", xali
 image bg subway_hall = Transform("images/backgrounds/BG_SubwayHall.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
 image bg subway_hall_night = Transform("images/backgrounds/BG_SubwayHall_Night.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
 
+# 주거지 거리
+image bg residence = Transform("images/backgrounds/BG_Residence.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+
+# 다다미방
+image bg tatami_room = Transform("images/backgrounds/BG_TatamiRoom.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+
+# 보건실
+image bg infirmary = Transform("images/backgrounds/BG_Infirmary.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+
+# 폐허
+image bg city_office_ruin = Transform("images/backgrounds/BG_CityOffice_Ruin.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+
+# 학생 방
+image bg student_room = Transform("images/backgrounds/BG_StudentRoom.jpg", xalign = 0.5, yalign = 0.5, fit = "cover")
+
 

@@ -8,6 +8,13 @@
     "07": "dark",
     "08": "dark sad",
     "09": "shout",
-    "10": "dizzy",
+    "10": {
+        "name": "dizzy",
+        "offset": {
+            "dx": 0,
+            "dy": 37
+        }
+    },
+    "11": "laugh",
     "99": "closed"
 }
