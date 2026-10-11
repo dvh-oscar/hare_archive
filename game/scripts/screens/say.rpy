@@ -90,6 +90,7 @@ style say_label:
     properties gui.text_properties("name", accent=False)
     xalign gui.name_xalign
     yalign 0.5
+    outlines [ (1, "#29415A", 0, 0) ]
 
 style ruby_text:
     size gui.text_size * 0.65
